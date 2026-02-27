@@ -1,43 +1,11 @@
 import HourlyContainer from './hourlyForcast/HourlyContainer.jsx';
 import Hero from './todayForecast/Hero.jsx';
 import DailyContainer from './dailyForecast/DailyContainer.jsx'
-import React, { useEffect, useContext, useRef, use } from 'react';
+import React, { useEffect, useContext, useRef } from 'react';
 import MainHeader from './mainHeader/Main-Header.jsx';
 import { useQuery } from '@tanstack/react-query';
 import { UserContext } from '../Store/store.jsx'
 
-
-const ProhibitedIcon = () => {
-  return (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-    <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-    <path d="M4.93 4.93l14.14 14.14" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
-)};
-const RetryIcon = () => {
-  return (
-  <svg 
-    width="20" 
-    height="20" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    className="hover:rotate-180 transition-transform duration-500"
-  >
-    <path 
-      d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.8273 3 17.3509 4.30055 19 6.31758" 
-      stroke="#fff" 
-      strokeWidth="2" 
-      strokeLinecap="round"
-    />
-    <path 
-      d="M19 2V6H15" 
-      stroke="#fff" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-  </svg>
-)};
 
 
 
@@ -174,7 +142,6 @@ const MainContent = () => {
     const isLocChange = loc.current.lat !== location.lat || loc.current.lon !== location.lon
     if(dailyData){
       if(!today || isLocChange || today["todayDate"] !== dailyData[2]["todayDate"]){
-        console.log("in use effect set today change")
         setToday(dailyData[2])
         loc.current = location 
       }
@@ -236,12 +203,12 @@ const MainContent = () => {
       <div className="w-full flex items-center justify-center mt-10 p-4">
       <div className="flex flex-col items-center gap-3">
         <div className="mb-4">
-          {ProhibitedIcon()}
+          <img height="20" width="20" src="/weather-app/images/icon-error.svg" alt="error icon" />
         </div>
         <h6 className="text-4xl font-medium text-center">Something went wrong</h6>
         <p className="text-[14px] text-neutral-300 text-center">We couldn't connect to server(API error). Please try again in a few movements</p>
         <button className="mt-4 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 focus:bg-neutral-700 flex items-center gap-2 rounded" onClick={(e)=>{ refetchDaily(); refetchHourly();}} type="button">
-          <div>{RetryIcon()}</div>
+          <img height="17" width="16" src="/weather-app/images/icon-retry.svg" alt=""/>
           <span>Retry</span>
         </button>
       </div>

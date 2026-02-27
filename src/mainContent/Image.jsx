@@ -15,9 +15,9 @@ const weatherImage = new Map();
 
 const Image = ({code, className=""}) => {
   const image = weatherImage.get(code);
-  console.log(image)
+  const imageText = image?.split("/")[3].split(".")[0].split("-").reverse().join(" ");
   return (
-    <img className={className} src={image} alt="" />
+    <img className={className} src={image} alt={imageText} />
   )
 }
 export default memo(Image);
