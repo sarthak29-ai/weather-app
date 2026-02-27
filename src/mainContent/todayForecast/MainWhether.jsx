@@ -3,13 +3,17 @@ import Image from '../Image.jsx'
 
 const MainWhether = ({isPending, temperature,location,date,code}) => {
   
+  function handle(e) {
+    e.target.classList.remove('delay-1');
+  }
+  
   if (isPending){
     return (
       <article className="w-full h-auto flex flex-col gap-2 justify-center items-center bg-neutral-800 aspect-[1.2] sm:aspect-[2.79] rounded-2xl sm:rounded-3xl overflow-hidden mb-4">
         <div className="flex gap-2 px-2 text-2xl">
-          <span className="animate-bounce ani">•</span>
-          <span className="animate-bounce">•</span>
-          <span className="animate-bounce delay-500">•</span>
+          <span className="ani-bounce">•</span>
+          <span onAnimationend={handle} className="ani-bounce delay-1">•</span>
+          <span className="ani-bounce">•</span>
         </div>
         <p>Loading...</p>
       </article>

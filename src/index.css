@@ -34,6 +34,7 @@
   --color-orange-500: hsl(28,100%,52%);
   --color-blue-500: hsl(233,67%,56%);
   --color-blue-700: hsl(248,70%,36%);
+
 }
 
 @layer component{
@@ -49,9 +50,40 @@
     grid-auto-rows: 7rem;
     grid-gap: 1rem;
   }
+  
+  .overflow-y-auto{
+    scrollbar-width: 3px;
+    scrollbar-color: hsl(243,23%,30%) transparent;
+  }
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 3px; 
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: hsl(243,23%,30%); 
+    border-radius: 20px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 10px;
+  }
+  .ani-bounce{
+    animation: bounce 1s ease-out infinite;
+  }
+  .delay-1{
+    animation-delay: .5s;
+  }
+  @keyframes bounce{
+    100%{
+      translateY: -30%;
+    }
+  }
+
   @media (min-width: 768px){
     .res-grid{
       grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
     }
   }
 }
+
