@@ -3,13 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  theme: {
-    extend: {
-       fontFamily: {
-         fmFont: ["BricolageGrotesque","DMSans"],
-       },
-    },
-  },
+  base: '/weather-app/',
   plugins: [
     react(),
     tailwindcss(),

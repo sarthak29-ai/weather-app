@@ -50,6 +50,4 @@ yarn-error.log*
 .idea/
 .DS_Store
 
-
-vite.config.json
 pnpm-workspace.yaml
