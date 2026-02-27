@@ -32,12 +32,12 @@ const Measure = () => {
           <label className="flex justify-between items-center has-[:checked]:bg-neutral-700 font-[500] rounded-lg my-2 p-2 cursor-pointer">
             <input className="hidden peer" type="radio" name={aragQuantity} value={unit[0]} defaultChecked={unit[0] === measureUnit[aragQuantity]} onChange={changeUnit} />
             <span>{unit[0]}</span>
-            <img className="peer-checked:block hidden" src="./src/assets/images/icon-checkmark.svg" height ="11" width="14" alt="checked icon"/>
+            <img className="peer-checked:block hidden" src="/weather-app/images/icon-checkmark.svg" height ="11" width="14" alt="checked icon"/>
           </label>
           <label className="flex justify-between items-center has-[:checked]:bg-neutral-700 font-[500] rounded-lg my-2 p-2 cursor-pointer">
             <input type="radio" className="hidden peer" name={aragQuantity} value={unit[1]} defaultChecked={unit[1] === measureUnit[aragQuantity]} onChange={changeUnit} />
             <span>{unit[1]}</span>
-            <img className="peer-checked:block hidden" src="./src/assets/images/icon-checkmark.svg" height ="11" width="14" alt="checked icon"/>
+            <img className="peer-checked:block hidden" src="/weather-app/images/icon-checkmark.svg" height ="11" width="14" alt="checked icon"/>
           </label>
         </fieldset>
         )
