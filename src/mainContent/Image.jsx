@@ -15,7 +15,7 @@ const weatherImage = new Map();
 
 const Image = ({code, className=""}) => {
   const image = weatherImage.get(code);
-  const imageText = image.split("/")[4].split(".")[0].split("-").reverse().join(" ");
+  const imageText = image.split("/")[3].split(".")[0].split("-").reverse().join(" ");
   return (
     <img className={className} src={image} alt={imageText} />
   )
