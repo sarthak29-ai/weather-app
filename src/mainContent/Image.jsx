@@ -17,7 +17,7 @@ const Image = ({code, className=""}) => {
   const image = weatherImage.get(code);
   console.log(image)
   return (
-    <img className={className} src={image} alt={imageText} />
+    <img className={className} src={image} alt="" />
   )
 }
 export default memo(Image);
