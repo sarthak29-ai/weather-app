@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+
+@layer base{
+  @font-face{
+    font-family: "BricolageGrotesque";
+    url: './src/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf';
+    font-weight: 0 900;
+    font-style: normal;
+  }
+  @font-face{
+    font-family: "DMSans";
+    url: './src/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf';
+    font-weight: 0 900;
+    font-style: normal;
+  }
+  @font-face{
+    font-family: "DMSans";
+    url: './src/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf';
+    font-weight: 0 900;
+    font-style: italic;
+  }
+}
+
+@theme{
+  --default-font-family: "DMSans", "BricolageGrotesque",sans-serif;
+  --color-neutral-900: hsl(243,96%,9%);
+  --color-neutral-800: hsl(243,27%,20%);
+  --color-neutral-700: hsl(243,23%,24%);
+  --color-neutral-600: hsl(243,23%,30%);
+  --color-neutral-300: hsl(240,6%,70%);
+  --color-neutral-200: hsl(250,6%,84%);
+  --color-neutral-0: hsl(0,0%,100%);
+  --color-orange-500: hsl(28,100%,52%);
+  --color-blue-500: hsl(233,67%,56%);
+  --color-blue-700: hsl(248,70%,36%);
+}
+
+@layer component{
+  .res-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-auto-rows: 8.5rem;
+    grid-gap: 1rem;
+  }
+  .daily-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-rows: 7rem;
+    grid-gap: 1rem;
+  }
+  @media (min-width: 768px){
+    .res-grid{
+      grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    }
+  }
+}
